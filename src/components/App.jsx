@@ -3,42 +3,24 @@ import { Component } from 'react';
 import users from 'data/users.json';
 
 export class App extends Component {
-  // state = {
-  //   tweets: 125,
-  //   followers: 100500,
-  //   isFollowing: false,
-  // };
-
   state = {
     users: users.map(user => {
       return { ...user, isFollowing: false };
     }),
-    // isFollowing: '',
   };
 
   componentDidMount() {
     const follower = localStorage.getItem('followers');
-    // const followingStatus = localStorage.getItem('folowwStatus');
     const parseFollowers = JSON.parse(follower);
-    // const parseStatus = JSON.parse(followingStatus);
     if (parseFollowers) {
       this.setState({ users: parseFollowers });
     }
-    // if (parseStatus) {
-    //   this.setState({ isFollowing: parseStatus });
-    // }
   }
 
   componentDidUpdate(_, prevState) {
     if (prevState.users !== this.setState.users) {
       localStorage.setItem('followers', JSON.stringify(this.state.users));
     }
-    // if (prevState.isFollowing !== this.setState.isFollowing) {
-    //   localStorage.setItem(
-    //     'folowwStatus',
-    //     JSON.stringify(this.state.isFollowing)
-    //   );
-    // }
   }
 
   onToggleClick = id => {
@@ -67,21 +49,14 @@ export class App extends Component {
     return (
       <div
         style={{
-          height: '100vh',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          fontSize: 40,
           color: '#010101',
+          background: 'linear-gradient(103deg, rgb(235, 225, 188) 7.2%, rgb(232, 188, 234) 57.5%, rgb(203, 209, 244) 90.7%)',
         }}
       >
         <UserList users={users} onClick={this.onToggleClick} />
-        {/* <User
-          tweets={tweets}
-          followers={followers}
-          onToggleClick={this.onToggleClick}
-          isFollowing={isFollowing}
-        /> */}
       </div>
     );
   }

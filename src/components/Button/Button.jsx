@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import css from './Button.module.css';
 
 export const Button = ({ user, onClick }) => {
@@ -11,4 +11,11 @@ export const Button = ({ user, onClick }) => {
       {user.isFollowing ? 'Following' : 'Follow'}
     </button>
   );
+};
+
+Button.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+  }).isRequired,
+  onClick: PropTypes.func.isRequired,
 };
