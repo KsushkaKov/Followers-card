@@ -3,6 +3,7 @@ import css from './UserList.module.css';
 import { User } from 'components/User/User';
 
 export const UserList = ({ users, onClick }) => {
+  console.log(users);
   return (
     <ul className={css.UserList}>
       {users.map(user => {
