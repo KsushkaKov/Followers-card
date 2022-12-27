@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "user": "Angelo Walter",
+    "tweets": 125,
+    "followers": 100500,
+    "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector.png"
+  },
+  {
+    "id": 2,
+    "user": "Zaara Cantrell",
+    "tweets": 15,
+    "followers": 777,
+    "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-PNG-Photo.png"
+  },
+  {
+    "id": 3,
+    "user": "Isaac Macdonald",
+    "tweets": 215,
+    "followers": 10100,
+    "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-No-Background.png"
+  },
+  {
+    "id": 4,
+    "user": "Matilda O'Neill",
+    "tweets": 98,
+    "followers": 2589,
+    "avatar": "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Photo.png"
+  }
+]

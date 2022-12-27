@@ -1,0 +1,30 @@
+.Btn {
+  background: #ebd8ff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  width: 226px;
+  height: 56px;
+  border: none;
+  font-family: 'Montserrat';
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  color: #373737;
+}
+
+.Btn:hover,
+.Btn:focus {
+  box-shadow: 0px 4px 4px rgba(237, 225, 10, 0.25);
+  transform: scale(1.02);
+}
+
+.Active {
+  composes: Btn;
+  background-color: #5cd3a8;
+}
