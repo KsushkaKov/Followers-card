@@ -4,17 +4,20 @@ import users from 'data/users.json';
 
 export class App extends Component {
   state = {
-    users: users.map(user => {
-      return { ...user, isFollowing: false };
-    }),
+    users: [],
   };
 
   componentDidMount() {
+    
     const follower = localStorage.getItem('followers');
     const parseFollowers = JSON.parse(follower);
     if (parseFollowers) {
       this.setState({ users: parseFollowers });
+      return;
     }
+    this.setState({users: users.map(user => {
+      return { ...user, isFollowing: false };
+    })})
   }
 
   componentDidUpdate(_, prevState) {
@@ -56,7 +59,7 @@ export class App extends Component {
           background: 'linear-gradient(103deg, rgb(235, 225, 188) 7.2%, rgb(232, 188, 234) 57.5%, rgb(203, 209, 244) 90.7%)',
         }}
       >
-        <UserList users={users} onClick={this.onToggleClick} />
+        {users.length > 0 && <UserList users={users} onClick={this.onToggleClick} />}
       </div>
     );
   }
